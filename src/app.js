@@ -1,9 +1,13 @@
 //1、导入express
 const express = require('express')
 const path = require('path')
+const bodyParser = require('body-parser')
 
 //2、创建应用
 const app = express()
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //3、集成路由
 const accountRouter = require(path.join(__dirname,"./routers/accountRouter.js"))
