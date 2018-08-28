@@ -1,0 +1,20 @@
+{
+  "name": "szhmqd21_node",
+  "version": "1.0.0",
+  "description": "深圳黑马前端21期Node项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duanzihuang/szhmqd21_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Duanzihuang/szhmqd21_node/issues"
+  },
+  "homepage": "https://github.com/Duanzihuang/szhmqd21_node#readme"
+}
