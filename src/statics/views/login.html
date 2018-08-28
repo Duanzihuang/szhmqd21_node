@@ -78,7 +78,8 @@
                 $("#vcodeimgId").attr('src',`/account/vcode?randomId=${Math.random()}`)
                 alert(result.message)
             }else{
-                
+                // 跳转到学生列表页面
+                window.location.href = "/studentmanager/list"
             }
         })
     }
