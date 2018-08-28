@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
     <title>登录页面</title>
 </head>
 <body>
@@ -55,6 +56,7 @@
     </div>
 </body>
 <script>
+    // 跳转到注册页面
     function register(){
         window.location.href = "/account/register"
     }
@@ -63,5 +65,22 @@
     $("#vcodeimgId").click(function(){
         $("#vcodeimgId").attr('src',`/account/vcode?randomId=${Math.random()}`)
     })
+
+    // 登录
+    function login(){
+        var username = $("#usernameId").val()
+        var password = md5($("#passwordId").val()+"!@#ZZZ-_-")
+        var vcode = $("#vcodeId").val()
+
+        $.post('/account/login',{username,password,vcode},function(result){
+            if(result.status !== 0){
+                // 重新获取验证码
+                $("#vcodeimgId").attr('src',`/account/vcode?randomId=${Math.random()}`)
+                alert(result.message)
+            }else{
+                
+            }
+        })
+    }
 </script>
 </html>

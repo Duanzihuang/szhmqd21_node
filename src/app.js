@@ -2,12 +2,15 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const session = require('express-session')
 
 //2、创建应用
 const app = express()
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
+// Use the session middleware
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 600000 }}))
 
 //3、集成路由
 const accountRouter = require(path.join(__dirname,"./routers/accountRouter.js"))

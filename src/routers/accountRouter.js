@@ -21,5 +21,8 @@ accountRouter.post('/register',accountCTRL.register)
 // 获取图片验证码
 accountRouter.get('/vcode',accountCTRL.getVcodeImage)
 
+// 处理登录
+accountRouter.post('/login',accountCTRL.login)
+
 //4、导出
 module.exports = accountRouter
