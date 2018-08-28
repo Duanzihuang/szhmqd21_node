@@ -58,5 +58,10 @@
     function register(){
         window.location.href = "/account/register"
     }
+
+    // 点击图片再次获取验证码
+    $("#vcodeimgId").click(function(){
+        $("#vcodeimgId").attr('src',`/account/vcode?randomId=${Math.random()}`)
+    })
 </script>
 </html>
