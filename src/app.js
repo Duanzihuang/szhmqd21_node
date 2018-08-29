@@ -9,8 +9,11 @@ const app = express()
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 // Use the session middleware
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 600000 }}))
+app.use(session({ secret: 'keyboard cat',resave: true,saveUninitialized:false, cookie: { maxAge: 600000 }}))
 
 //3、集成路由
 const accountRouter = require(path.join(__dirname,"./routers/accountRouter.js"))
