@@ -32,55 +32,19 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each(students)}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td>{{this.age}}</td>
+                        <td>{{this.sex}}</td>
+                        <td>{{this.phone}}</td>
+                        <td>
+                            <a href="#" class="btn btn-success">编辑</a> |
 
-                <tr>
-                    <td>刘德华</td>
-                    <td>50</td>
-                    <td>男</td>
-                    <td>13812345678</td>
-                    <td>
-                        <a href="/studentmanager/edit/5b7c2717f396f8182b32c3f8" class="btn btn-success">编辑</a> |
-
-                        <input type="button" onclick="deleteStudent('5b7c2717f396f8182b32c3f8')" class="btn btn-danger" value="删除">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>黎明</td>
-                    <td>48</td>
-                    <td>男</td>
-                    <td>13618223232</td>
-                    <td>
-                        <a href="/studentmanager/edit/5b7c273af396f8182b32c3f9" class="btn btn-success">编辑</a> |
-
-                        <input type="button" onclick="deleteStudent('5b7c273af396f8182b32c3f9')" class="btn btn-danger" value="删除">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>山鸡</td>
-                    <td>35</td>
-                    <td>男</td>
-                    <td>13898765432</td>
-                    <td>
-                        <a href="/studentmanager/edit/5b7c275ff396f8182b32c3fa" class="btn btn-success">编辑</a> |
-
-                        <input type="button" onclick="deleteStudent('5b7c275ff396f8182b32c3fa')" class="btn btn-danger" value="删除">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>段子黄</td>
-                    <td>29</td>
-                    <td>男</td>
-                    <td>18612301798</td>
-                    <td>
-                        <a href="/studentmanager/edit/5b7c2fb536c9ad1a6a9ea788" class="btn btn-success">编辑</a> |
-
-                        <input type="button" onclick="deleteStudent('5b7c2fb536c9ad1a6a9ea788')" class="btn btn-danger" value="删除">
-                    </td>
-                </tr>
-
+                            <input type="button" class="btn btn-danger" value="删除">
+                        </td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
