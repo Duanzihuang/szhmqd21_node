@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),path=require("path"),studentManagerRouter=express.Router(),studentManagerCTRL=require(path.join(__dirname,"../controllers/studentmanagerController.js"));studentManagerRouter.get("/list",studentManagerCTRL.getStudentListPage),module.exports=studentManagerRouter;

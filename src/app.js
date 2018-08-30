@@ -7,6 +7,8 @@ const session = require('express-session')
 //2、创建应用
 const app = express()
 
+app.use(express.static(path.join(__dirname)))
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
