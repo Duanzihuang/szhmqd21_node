@@ -22,7 +22,7 @@ app.use('/account',accountRouter)
 app.use('/studentmanager',studentManagerRouter)
 
 //4、开启Web服务
-app.listen(3000,'127.0.0.1',err=>{
+app.listen(3000,err=>{
     if(err){
         console.log(err)
     }
