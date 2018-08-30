@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name      : 'szhmqd21_node',
-    script    : './src/app.js',
+    script    : './dist/app.js',
     env: {
       NODE_ENV: 'development'
     },
