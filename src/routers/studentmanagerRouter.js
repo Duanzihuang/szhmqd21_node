@@ -15,10 +15,12 @@ studentManagerRouter.get('/add',studentManagerCTRL.getAddStudentPage)
 // 完成新增操作
 studentManagerRouter.post('/add',studentManagerCTRL.addStudent)
 
-// 完成新增操作
+// 获取修改页面(动态路径参数)
 studentManagerRouter.get('/edit/:studentId',studentManagerCTRL.getEditStudentPage)
 
-// 完成修改操作
+// 完成修改操作(动态路径参数)
 studentManagerRouter.post('/edit/:studentId',studentManagerCTRL.editStudent)
+
+studentManagerRouter.get('/delete/:studentId',studentManagerCTRL.deleteStudent)
 
 module.exports = studentManagerRouter

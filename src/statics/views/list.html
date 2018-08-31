@@ -41,7 +41,7 @@
                         <td>
                             <a href="/studentmanager/edit/{{this._id}}" class="btn btn-success">编辑</a> |
 
-                            <input type="button" class="btn btn-danger" value="删除">
+                            <input type="button" onclick="deleteStudent('{{this._id}}')" class="btn btn-danger" value="删除">
                         </td>
                     </tr>
                 {{/each}}
@@ -50,8 +50,16 @@
     </div>
 </div>
 <script>
+    // 搜索
     function search(){
         window.location.href = `/studentmanager/list?keyword=${$("#studentNameId").val()}`
+    }
+
+    // 删除
+    function deleteStudent(_id){
+        if(confirm("确定删除吗?")){
+            location.href = `/studentmanager/delete/${_id}`
+        }
     }
 </script>
 {{/block}}
