@@ -17,6 +17,20 @@ app.use(bodyParser.json())
 // Use the session middleware
 app.use(session({ secret: 'keyboard cat',resave: true,saveUninitialized:false, cookie: { maxAge: 600000 }}))
 
+//all 是代表支持GET/POST方法，这个all方法要写在集成路由之前
+app.all('/*',(req,res,next)=>{
+    if(req.url.includes('account')){
+        next()
+    }else{
+        // 判断是否登录，如果登录，放行，如果没有登录直接响应数据回去
+        if(req.session.loginedName){
+            next()
+        }else{ // 没有登录，则响应浏览器一段可以执行的脚本
+            res.send(`<script>alert("您还没有登录，请先登录!");location.href="/account/login"</script>`)
+        }
+    }
+})
+
 //3、集成路由
 const accountRouter = require(path.join(__dirname,"./routers/accountRouter.js"))
 const studentManagerRouter = require(path.join(__dirname,"./routers/studentmanagerRouter.js"))

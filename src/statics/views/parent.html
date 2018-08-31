@@ -31,7 +31,7 @@
                             <a class="navbar-brand" href="#">欢迎进入后台管理123</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
-                            <p class="navbar-text navbar-right">欢迎【admin】登录&nbsp;
+                            <p class="navbar-text navbar-right">欢迎【{{loginedName}}】登录&nbsp;
                                 <a href="javascript:logout()" class="navbar-link">退出</a>
                             </p>
                         </div>
@@ -58,5 +58,11 @@
         </div>
     </div>
 </body>
-
+<script>
+    function logout(){
+        if(confirm("确认退出吗?")){
+            location.href = "/account/logout"
+        }
+    }
+</script>
 </html>

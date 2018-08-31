@@ -16,7 +16,8 @@ exports.getStudentListPage = (req, res) => {
         path.join(__dirname, "../statics/views/list.html"),
         {
           students: docs,
-          keyword
+          keyword,
+          loginedName:req.session.loginedName
         },
         function(error, content) {
           res.send(content);
@@ -32,7 +33,7 @@ exports.getStudentListPage = (req, res) => {
 exports.getAddStudentPage = (req, res) => {
   xtpl.renderFile(
     path.join(__dirname, "../statics/views/add.html"),
-    {},
+    {loginedName:req.session.loginedName},
     function(error, content) {
       res.send(content);
     }
@@ -65,7 +66,8 @@ exports.getEditStudentPage = (req, res) => {
       xtpl.renderFile(
         path.join(__dirname, "../statics/views/edit.html"),
         {
-          student: doc
+          student: doc,
+          loginedName:req.session.loginedName
         },
         function(error, content) {
           res.send(content);

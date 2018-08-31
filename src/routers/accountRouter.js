@@ -24,5 +24,8 @@ accountRouter.get('/vcode',accountCTRL.getVcodeImage)
 // 处理登录
 accountRouter.post('/login',accountCTRL.login)
 
+// 处理登出
+accountRouter.get('/logout',accountCTRL.logout)
+
 //4、导出
 module.exports = accountRouter
