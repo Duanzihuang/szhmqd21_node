@@ -1,1 +1,0 @@
-"use strict";var xtpl=require("xtpl"),path=require("path"),databasetool=require(path.join(__dirname,"../tools/databasetool.js"));exports.getStudentListPage=function(t,a){var i=t.query.keyword||"";databasetool.findList("studentInfo",{name:{$regex:i}},function(t,e){xtpl.renderFile(path.join(__dirname,"../statics/views/list.html"),{students:e,keyword:i},function(t,e){a.send(e)})})};
