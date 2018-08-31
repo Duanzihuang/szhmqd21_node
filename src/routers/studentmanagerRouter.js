@@ -15,4 +15,10 @@ studentManagerRouter.get('/add',studentManagerCTRL.getAddStudentPage)
 // 完成新增操作
 studentManagerRouter.post('/add',studentManagerCTRL.addStudent)
 
+// 完成新增操作
+studentManagerRouter.get('/edit/:studentId',studentManagerCTRL.getEditStudentPage)
+
+// 完成修改操作
+studentManagerRouter.post('/edit/:studentId',studentManagerCTRL.editStudent)
+
 module.exports = studentManagerRouter
