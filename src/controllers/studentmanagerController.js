@@ -17,3 +17,26 @@ exports.getStudentListPage = (req,res) => {
         });
     })    
 }
+
+/**
+ * 最终处理，返回新增学生页面
+ */
+exports.getAddStudentPage = (req,res) => {
+    xtpl.renderFile(path.join(__dirname,"../statics/views/add.html"),{
+    },function(error,content){
+        res.send(content)
+    });
+}
+
+/**
+ * 最终处理，返回新增操作之后的html(html中有一段可以执行js)
+ */
+exports.addStudent = (req,res) => {
+    databasetool.insertOne('studentInfo',req.body,(err,result)=>{
+        if(result == null){ // 新增失败
+            res.send(`<script>alert("新增失败!");</script>`)
+        }else{ //新增成功
+            res.send(`<script>window.location.href="/studentmanager/list"</script>`)
+        }
+    })
+}
