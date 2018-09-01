@@ -16,7 +16,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:Duanzihuang/szhmqd21_node.git',
       path : '/ftp/node/production',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'git pull && npm install && pm2 reload ecosystem.config.js --env production'
     }
   }
 };
