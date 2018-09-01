@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Use the session middleware
-app.use(session({ secret: 'keyboard cat',resave: true,saveUninitialized:false, cookie: { maxAge: 600000 }}))
+app.use(session({ secret: 'keyboard cat',resave: true,saveUninitialized:false, cookie: { maxAge: 60000 }}))
 
 //all 是代表支持GET/POST方法，这个all方法要写在集成路由之前
 app.all('/*',(req,res,next)=>{
