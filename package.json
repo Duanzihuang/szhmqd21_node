@@ -1,6 +1,6 @@
 {
   "name": "szhmqd21_node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "深圳黑马前端21期Node项目",
   "main": "index.js",
   "scripts": {
