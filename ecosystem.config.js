@@ -9,7 +9,6 @@ module.exports = {
       NODE_ENV: 'production'
     }
   }],
-
   deploy : {
     production : {
       user : 'root',
